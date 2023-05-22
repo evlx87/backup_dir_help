@@ -1,8 +1,8 @@
 import os
 import shutil
 
-SOURCE_TARGET = ""
-DESTINATION_TARGET = ""
+SOURCE_TARGET = "C:\\test\\old"
+DESTINATION_TARGET = "C:\\test\\new"
 
 
 def copy_directory(source_dir, destination_dir):
@@ -16,8 +16,10 @@ def copy_directory(source_dir, destination_dir):
 
             if os.path.isfile(source_item):
                 shutil.copy2(source_item, destination_item)
+                print(f"Копирование файла: {item} ({source_item})")
             elif os.path.isdir(source_item):
                 shutil.copytree(source_item, destination_item)
+                print(f"Копирование директории: {item} ({source_item})")
 
         print("Директория успешно скопирована")
     except Exception as e:
