@@ -3,8 +3,8 @@ import shutil
 import logging
 import sys
 
-SOURCE_TARGET = "C:\\test\\old"
-DESTINATION_TARGET = "C:\\test\\new"
+SOURCE_TARGET = "ADD SOURCE PATH"
+DESTINATION_TARGET = "ADD DESTANATION PATH"
 LOG_FILE = "backup_logs.log"
 
 logger = logging.getLogger()
@@ -45,7 +45,7 @@ def copy_directory(source_dir, destination_dir):
                     shutil.copytree(source_item, destination_item)
                     logging.info(f"Копирование директории: {item} ({source_item})")
 
-        print("Директория успешно скопирована")
+        logging.info("Директория успешно скопирована")
     except Exception as e:
         logging.info(f"Ошибка при копировании директории: {str(e)}")
 
